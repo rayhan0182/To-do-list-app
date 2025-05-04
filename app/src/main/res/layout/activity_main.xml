@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#14061F"
+    android:background="@drawable/gradient"
     android:orientation="vertical"
     android:padding="@dimen/_5sdp"
     tools:context=".MainActivity">
@@ -16,7 +16,7 @@
         android:layout_height="@dimen/_40sdp"
         android:layout_marginHorizontal="@dimen/_30sdp"
         android:layout_marginTop="@dimen/_20sdp"
-        android:backgroundTint="#423662"
+        android:backgroundTint="#50A2CC"
         app:cardCornerRadius="@dimen/_10sdp">
 
         <ImageView
@@ -31,12 +31,11 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:text="Search note"
-            android:textColor="#EFEFEF"
             android:layout_marginLeft="@dimen/_37sdp"
             android:layout_marginTop="@dimen/_10sdp"
-            />
+            android:text="Search note"
+            android:textColor="#EFEFEF"
+            android:textStyle="bold" />
 
 
     </androidx.cardview.widget.CardView>
@@ -53,7 +52,7 @@
         android:layout_height="@dimen/_50sdp"
         app:cardCornerRadius="@dimen/_50sdp"
         app:cardElevation="@dimen/_10sdp"
-        android:backgroundTint="#261343"
+        android:backgroundTint="#75D79C"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         >
