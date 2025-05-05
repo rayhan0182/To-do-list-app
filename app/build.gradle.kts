@@ -1,6 +1,9 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+
+    kotlin("kapt")
+
 }
 
 android {
@@ -54,6 +57,12 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    implementation(libs.room.runtime)
+
+    kapt(libs.room.compiler)
+
+
 
     implementation ("com.intuit.sdp:sdp-android:1.1.1")
     implementation ("com.intuit.ssp:ssp-android:1.1.1")

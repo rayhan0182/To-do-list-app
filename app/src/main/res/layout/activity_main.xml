@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -8,16 +8,20 @@
     android:background="@drawable/gradient"
     android:orientation="vertical"
     android:padding="@dimen/_5sdp"
-    tools:context=".MainActivity">
+    tools:context=".Activity.MainActivity">
 
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/searchber"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_40sdp"
         android:layout_marginHorizontal="@dimen/_30sdp"
         android:layout_marginTop="@dimen/_20sdp"
         android:backgroundTint="#50A2CC"
-        app:cardCornerRadius="@dimen/_10sdp">
+        app:cardCornerRadius="@dimen/_10sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:layout_width="@dimen/_25sdp"
@@ -25,7 +29,6 @@
             android:layout_marginLeft="@dimen/_10sdp"
             android:layout_marginTop="@dimen/_8sdp"
             android:scaleType="centerCrop"
-
             android:src="@drawable/baseline_search_24" />
 
         <TextView
@@ -40,34 +43,63 @@
 
     </androidx.cardview.widget.CardView>
 
-    <RelativeLayout
-        android:id="@+id/btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
 
-        >
+    <ImageView
+        android:id="@+id/right"
+        android:layout_width="@dimen/_45sdp"
+        android:layout_height="@dimen/_45sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/searchber"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:layout_marginLeft="@dimen/_35sdp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/baseline_check_circle_24" />
+
+    <TextView
+        android:id="@+id/enote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Exmple Note"
+        android:textSize="@dimen/_15ssp"
+        android:layout_marginLeft="@dimen/_60sdp"
+        app:layout_constraintStart_toStartOf="@id/right"
+        app:layout_constraintTop_toBottomOf="@id/searchber"
+        android:layout_marginTop="@dimen/_25sdp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Exmple Note"
+        android:textSize="@dimen/_15ssp"
+        android:layout_marginLeft="@dimen/_60sdp"
+        app:layout_constraintStart_toStartOf="@id/right"
+        app:layout_constraintTop_toBottomOf="@id/enote"
+        android:layout_marginTop="@dimen/_5sdp"
+        />
+
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/btn"
         android:layout_width="@dimen/_50sdp"
         android:layout_height="@dimen/_50sdp"
-        app:cardCornerRadius="@dimen/_50sdp"
-        app:cardElevation="@dimen/_10sdp"
+        android:layout_marginLeft="@dimen/_195sdp"
+        android:layout_marginBottom="@dimen/_30sdp"
         android:backgroundTint="#75D79C"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        >
+        app:cardCornerRadius="@dimen/_50sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
 
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="@dimen/_28sdp"
             android:layout_height="@dimen/_28sdp"
-            android:src="@drawable/plus"
-            android:layout_gravity="center"/>
+            android:layout_gravity="center"
+            android:src="@drawable/plus" />
     </androidx.cardview.widget.CardView>
 
 
-    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
 
-
-</LinearLayout>
