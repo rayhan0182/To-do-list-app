@@ -4,6 +4,10 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.room.Room
+import com.example.myapplication.Roomdata.Database
+import com.example.myapplication.Roomdata.User
+import com.example.myapplication.Roomdata.UserDao
 import com.example.myapplication.databinding.ActivityMain2Binding
 
 class MainActivity2 : AppCompatActivity() {
@@ -14,24 +18,50 @@ class MainActivity2 : AppCompatActivity() {
         binding = ActivityMain2Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val db = Room.databaseBuilder(
+
+            applicationContext,
+
+            Database::class.java, "notelistname"
+
+
+        ).allowMainThreadQueries().build()
+
+        val bd = db.database()
+
 
         homepage()
 
-
-
+        userdatacreate(bd)
 
 
     }
 
 
+    private fun userdatacreate(bd: UserDao) {
+
+          binding.save.setOnClickListener {
+
+              val title = binding.title.text.toString()
+
+              val des = binding.ds.text.toString()
+
+              val date = binding.date.text.toString()
+
+
+              val udata = User(0,title,des,date)
+
+              bd.insert(udata)
+
+              startActivity(Intent(this, MainActivity::class.java))
+
+
+          }
 
 
 
 
-
-
-
-
+    }
 
 
     private fun homepage() {

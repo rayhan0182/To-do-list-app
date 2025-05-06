@@ -103,7 +103,7 @@
         android:inputType="text"
         android:hint="description"
         android:gravity="center"
-        android:textColor="#F4F1F1"
+        android:textColor="@color/black"
         android:background="@drawable/round_box"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -122,7 +122,7 @@
         android:fontFamily="@font/baloo_2"
         android:textStyle="bold"
         android:textSize="@dimen/_17ssp"
-        android:textColor="#353535"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ds"
         android:layout_marginTop="@dimen/_25sdp"
@@ -136,7 +136,7 @@
         android:inputType="date"
         android:hint="date"
         android:gravity="center"
-        android:textColor="#F4F1F1"
+        android:textColor="@color/black"
         android:background="@drawable/round_box"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -147,6 +147,7 @@
         />
 
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/save"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Save"

@@ -4,6 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.room.Room
+import com.example.myapplication.Roomdata.Database
 import com.example.myapplication.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -14,12 +16,21 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.btn.setOnClickListener {
+        val db = Room.databaseBuilder(
 
-            startActivity(Intent(this, MainActivity2::class.java))
+            applicationContext,
+
+            Database::class.java, "notelistname"
 
 
-        }
+        ).allowMainThreadQueries().build()
+
+        val bd = db.database()
+
+        bd.getall()
+
+
+
 
 
     }
