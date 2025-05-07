@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.Roomdata.User
 import com.example.myapplication.databinding.NotelistBinding
 
-class adapter(private val nitems: List<User>): RecyclerView.Adapter<viewholder>() {
+class adapter(private val nitems: MutableList<User>): RecyclerView.Adapter<viewholder>() {
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int

@@ -9,6 +9,7 @@ import com.example.myapplication.Roomdata.Database
 import com.example.myapplication.Roomdata.User
 import com.example.myapplication.Roomdata.UserDao
 import com.example.myapplication.databinding.ActivityMain2Binding
+import kotlin.toString
 
 class MainActivity2 : AppCompatActivity() {
     lateinit var binding: ActivityMain2Binding
@@ -40,25 +41,36 @@ class MainActivity2 : AppCompatActivity() {
 
     private fun userdatacreate(bd: UserDao) {
 
-          binding.save.setOnClickListener {
+        binding.save.setOnClickListener {
 
-              val title = binding.title.text.toString()
+            val title = binding.title.text.toString()
 
-              val des = binding.ds.text.toString()
+            val des = binding.ds.text.toString()
 
-              val date = binding.date.text.toString()
+            val date = binding.date.text.toString()
 
-
-              val udata = User(0,title,des,date)
-
-              bd.insert(udata)
-
-              startActivity(Intent(this, MainActivity::class.java))
+            var udata = User(0, title.toString(), des.toString(), date.toString())
 
 
-          }
+            bd.insert(udata)
+
+            bd.getall().forEach {
+
+                val intent = Intent(this, MainActivity::class.java)
+
+                intent.putExtra("title", it.title)
+
+                intent.putExtra("des", it.description)
+
+                intent.putExtra("date", it.date)
+
+                startActivity(intent)
 
 
+            }
+
+
+        }
 
 
     }
